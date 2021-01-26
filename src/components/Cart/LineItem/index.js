@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
@@ -8,8 +8,11 @@ const LineItem = props => {
   const { item } = props
   const {
     removeLineItem,
+    updateLineItem,
     store: { client, checkout },
   } = useContext(StoreContext)
+
+  const [quantity, setQuantity] = useState(item.quantity)
 
   const variantImage = item.variant.image ? (
     <img
@@ -29,6 +32,14 @@ const LineItem = props => {
     removeLineItem(client, checkout.id, item.id)
   }
 
+  const handleQuantityChange = ({ target }) => {
+    setQuantity(target.value)
+  }
+
+  useEffect(() => {
+    updateLineItem(client, checkout.id, item.id, quantity)
+  }, [quantity])
+
   return (
     <Wrapper>
       {console.log(item)}
@@ -40,6 +51,15 @@ const LineItem = props => {
         {`  `}
         {item.variant.title === !'Default Title' ? item.variant.title : ''}
       </p>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        step="1"
+        onChange={handleQuantityChange}
+        value={quantity}
+      />
       {selectedOptions}
       {item.quantity}
       <button onClick={handleRemove}>Remove</button>

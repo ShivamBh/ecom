@@ -14,6 +14,7 @@ import { ProductTitle, ProductDescription } from './styles'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
+  console.log('Product Data', data)
   return (
     <>
       <SEO title={product.title} description={product.description} />
