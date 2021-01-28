@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
-import { Grid, Product, Title, PriceTag } from './styles'
+import { Grid, Product, ProductImg, Title, PriceTag } from './styles'
 import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
@@ -63,7 +63,7 @@ const ProductGrid = () => {
             <Product key={id}>
               <Link to={`/product/${handle}/`}>
                 {firstImage && firstImage.localFile && (
-                  <Img
+                  <ProductImg
                     fluid={firstImage.localFile.childImageSharp.fluid}
                     alt={handle}
                   />
