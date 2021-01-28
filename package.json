@@ -1,9 +1,9 @@
 {
   "name": "gatsby-shopify-starter",
   "private": false,
-  "description": "A simple starter to build a blazing fast Shopify store quickly with Gatsby",
+  "description": "Gatsby Shopify boilerplate",
   "version": "0.1.0",
-  "author": "Alexander Hörl <alexander.horl2@live.de>",
+  "author": "ShivamBh",
   "engines": {
     "node": "=> 10.13 < 14.9"
   },
@@ -21,6 +21,7 @@
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.9.1",
     "gatsby-source-filesystem": "^2.9.0",
+    "gatsby-source-sanity": "^6.0.5",
     "gatsby-source-shopify": "^3.5.1",
     "gatsby-transformer-sharp": "^2.7.0",
     "isomorphic-fetch": "^3.0.0",
@@ -47,9 +48,19 @@
     "dev": "gatsby develop",
     "start": "npm run dev",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-remove-graphql-queries": "^2.15.0",
+    "babel-preset-react-app": "^10.0.0",
     "prettier": "^2.2.1"
   },
   "repository": {
