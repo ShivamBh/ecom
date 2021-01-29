@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-
+import { ThemeProvider } from '@emotion/react'
 import ContextProvider from '~/provider/ContextProvider'
 
-import { GlobalStyle } from '~/utils/styles'
+import { GlobalStyle } from './styles'
 import Navigation from '~/components/Navigation'
 import Footer from '../components/Footer'
+import theme from './theme'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -17,31 +18,33 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <ContextProvider>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
+      <ContextProvider>
+        <StaticQuery
+          query={graphql`
+            query SiteTitleQuery {
+              site {
+                siteMetadata {
+                  title
+                }
               }
             }
-          }
-        `}
-        render={data => (
-          <>
-            <Navigation siteTitle={data.site.siteMetadata.title} />
-            <Wrapper>{children}</Wrapper>
-            <Footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="#">Some tech</a>
-            </Footer>
-          </>
-        )}
-      />
-    </ContextProvider>
+          `}
+          render={data => (
+            <>
+              <Navigation siteTitle={data.site.siteMetadata.title} />
+              <Wrapper>{children}</Wrapper>
+              <Footer>
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="#">Some tech</a>
+              </Footer>
+            </>
+          )}
+        />
+      </ContextProvider>
+    </ThemeProvider>
   )
 }
 

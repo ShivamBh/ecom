@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import { breakpoints } from '../../utils/styles'
-
 export const Wrapper = styled.div`
   margin-bottom: 1.45rem;
 `
@@ -21,10 +19,6 @@ export const MenuLink = styled(Link)`
   font-size: 1.25rem;
   font-weight: bold;
   color: black;
-
-  @media (max-width: ${breakpoints.s}px) {
-    font-size: 1.4rem;
-  }
 `
 
 export const CartCounter = styled.span`

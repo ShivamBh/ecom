@@ -9,7 +9,7 @@ import {
   TwoColumnGrid,
   GridLeft,
   GridRight,
-} from '~/utils/styles'
+} from '~/layouts/styles'
 import { ProductTitle, ProductDescription } from './styles'
 
 const ProductPage = ({ data }) => {
