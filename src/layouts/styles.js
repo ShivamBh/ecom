@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
-        font-family: sans-serif;
+        font-size: calc(112.5% + 0.25vw);
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
@@ -48,10 +48,6 @@ export const TwoColumnGrid = styled.div`
   grid-template-columns: 1fr 2rem 1fr;
   grid-template-rows: 1auto;
   grid-template-areas: 'left . right';
-
-  @media (max-width: ${breakpoints.l}px) {
-    display: block;
-  }
 `
 
 export const GridLeft = styled.div`

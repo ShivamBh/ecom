@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ['40rem', '64rem', '80rem'],
+  breakpoints: ['320px', '992px', '1024px'],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
     blue: '#07c',
@@ -29,7 +29,7 @@ export default {
   buttons: {
     primary: {
       color: 'white',
-      bg: 'primary',
+      bg: 'black',
     },
   },
 }
