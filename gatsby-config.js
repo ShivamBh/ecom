@@ -79,6 +79,14 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: ['Mukta'],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

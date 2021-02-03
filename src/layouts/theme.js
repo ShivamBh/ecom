@@ -7,14 +7,15 @@ export default {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace',
+    body: 'Mukta',
+    heading: 'Mukta',
+    monospace: 'Mukta',
   },
   fontWeights: {
-    body: 400,
+    body: 300,
     heading: 700,
     bold: 700,
+    title: 900,
   },
   lineHeights: {
     body: 1.5,

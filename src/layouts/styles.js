@@ -14,11 +14,18 @@ export const GlobalStyle = props => (
   <Global
     {...props}
     styles={css`
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
       }
       html {
+        font-family: 'Mukta', 'sans-serif';
         font-size: calc(112.5% + 0.25vw);
+        font-weight: 300;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
