@@ -3,7 +3,18 @@ import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
-import { CartCounter, Container, MenuLink, Wrapper } from './styles'
+import Navbar from './Navbar'
+import NavActions from './NavActions'
+import Branding from './Branding'
+import {
+  CartCounter,
+  Container,
+  MenuLink,
+  HeaderWrapper,
+  HeaderBranding,
+  HeaderNavbar,
+  HeaderActions,
+} from './styles'
 
 const useQuantity = () => {
   const {
@@ -18,17 +29,11 @@ const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
 
   return (
-    <Wrapper>
-      <Container>
-        <MenuLink fontSize={[1, 2, 3]} to="/">
-          rhstore
-        </MenuLink>
-        <MenuLink to="/cart">
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          Cart 🛍
-        </MenuLink>
-      </Container>
-    </Wrapper>
+    <HeaderWrapper>
+      <Branding></Branding>
+      <Navbar></Navbar>
+      <NavActions />
+    </HeaderWrapper>
   )
 }
 
