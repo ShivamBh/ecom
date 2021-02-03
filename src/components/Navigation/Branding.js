@@ -4,7 +4,7 @@ import { HeaderBranding } from './styles'
 const Branding = props => {
   return (
     <>
-      <HeaderBranding>Branding</HeaderBranding>
+      <HeaderBranding>Hemisphere</HeaderBranding>
     </>
   )
 }
