@@ -45,7 +45,7 @@ export const GlobalStyle = props => (
 
       ul.transition li {
         transform: scaleY(0);
-        background: rebeccapurple;
+        background: black;
         width: 20%;
         list-style-type: none;
       }

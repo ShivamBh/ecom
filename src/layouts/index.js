@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 import theme from './theme'
 import { TransitionState } from 'gatsby-plugin-transition-link'
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   margin: 0 auto;
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
@@ -128,6 +128,7 @@ const Layout = ({ children, location }) => {
                 <li></li>
                 <li></li>
               </ul>
+
               <Wrapper>{children}</Wrapper>
             </>
           )}
