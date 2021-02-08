@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { ThemeProvider } from '@emotion/react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 
 import ContextProvider from '~/provider/ContextProvider'
 import { GlobalStyle } from './styles'
 import Navigation from '~/components/Navigation'
 import Footer from '../components/Footer'
 import theme from './theme'
+import { TransitionState } from 'gatsby-plugin-transition-link'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
   padding: 0px 1.0875rem 1.45rem;
 `
 
-const duration = 0.5
+const duration = 0.8
 
 const variants = {
   inital: {
@@ -40,38 +41,46 @@ const variants = {
 }
 
 const AnimationBox = styled(motion.div)`
-  height: 0;
+  height: 100vh;
   width: 100vw;
   position: fixed;
   z-index: 100000;
   background: black;
-  display: hidden;
   bottom: 0;
   left: 0;
-  right: 0;
+  transform-origin: '50% 100%';
 `
 
 const AnimBoxVariants = {
   initial: {
-    height: 0,
+    y: '100vh',
   },
   enter: {
-    height: ['100vh', '0vh'],
+    y: '-100vh',
+
     transition: {
-      duration: duration,
-      delay: duration,
       when: 'beforeChildren',
     },
   },
   exit: {
-    height: 0,
-    transition: {
-      duration: duration,
-    },
+    y: '-100vh',
+    // transition: {
+    //   delay: 0.3,
+    //   duration: duration,
+    // },
   },
 }
 
 const Layout = ({ children, location }) => {
+  let pageAnim = useAnimation()
+
+  const triggerPageAnimation = async () => {
+    await pageAnim.start({ scaleY: 1 })
+    // await pageAnim.start({ transformOrigin: '50% 0%' })
+    await pageAnim.start({ scaleY: 0 })
+  }
+  console.log('Transition', TransitionState)
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -88,17 +97,37 @@ const Layout = ({ children, location }) => {
           `}
           render={data => (
             <>
-              <AnimatePresence>
-                <AnimationBox
-                  key={location.pathname}
-                  variants={AnimBoxVariants}
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
-                ></AnimationBox>
-              </AnimatePresence>
               <Navigation siteTitle={data.site.siteMetadata.title} />
 
+              {/* <motion.main
+                initial={{
+                  opacity: 0,
+                  x: -200,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  x: 200,
+                }}
+                transition={{
+                  type: 'spring',
+                  mass: 0.35,
+                  stiffness: 75,
+                  duration: 0.3,
+                }}
+              >
+                
+              </motion.main> */}
+              <ul className="transition">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
               <Wrapper>{children}</Wrapper>
             </>
           )}

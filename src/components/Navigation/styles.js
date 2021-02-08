@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import TransitionLink from 'gatsby-plugin-transition-link'
 
 export const HeaderWrapper = styled.div`
   height: 6.9vw;

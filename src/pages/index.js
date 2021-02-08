@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
 import ProductGrid from '~/components/ProductGrid'
+import Layout from '~/layouts'
 
 const HomeWrapper = styled.div`
   margin-top: 7.5vw;

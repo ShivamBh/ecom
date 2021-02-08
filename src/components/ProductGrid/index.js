@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import TransitionLink from 'gatsby-plugin-transition-link'
 
 import StoreContext from '~/context/StoreContext'
 import { Grid, Product, ProductImg, Title, PriceTag } from './styles'
 import { Img } from '~/utils/styles'
+import TLink from '../TransitionLink/index'
+import { animateObjects, newContent } from '../../utils/transitions'
 
 const ProductGrid = () => {
   const {
@@ -61,14 +64,37 @@ const ProductGrid = () => {
             },
           }) => (
             <Product key={id}>
-              <Link to={`/product/${handle}/`}>
+              <TLink
+                exit={{
+                  length: 0.6,
+                  trigger: ({ exit, e, node }) => animateObjects(exit, node),
+                }}
+                entry={{
+                  delay: 0.5,
+                  length: 0.6,
+                  trigger: ({ entry, node }) => newContent(node),
+                }}
+                to={`/product/${handle}/`}
+              >
                 {firstImage && firstImage.localFile && (
                   <ProductImg
                     fluid={firstImage.localFile.childImageSharp.fluid}
                     alt={handle}
                   />
                 )}
-              </Link>
+              </TLink>
+              {/* <Link
+                entry={entryTransition}
+                exit={exitTransition}
+                to={`/product/${handle}/`}
+              >
+                {firstImage && firstImage.localFile && (
+                  <ProductImg
+                    fluid={firstImage.localFile.childImageSharp.fluid}
+                    alt={handle}
+                  />
+                )}
+              </Link> */}
               <Title>{title}</Title>
               <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
             </Product>

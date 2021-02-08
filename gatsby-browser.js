@@ -1,24 +1,35 @@
 import React from 'react'
-import Layout from '~/layouts'
+import { AnimatePresence } from 'framer-motion'
 
-const transitionDelay = 500
+export const wrapPageElement = ({ element }) => (
+  <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+)
 
-export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>
-}
-
+// must be on Gatsby v2.28 or later -- previous versions had a bug with getSavedScrollPosition that was resolved with v2.28
+// wait until page exit animation has completed before updating scroll position
 export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
+  // transition duration from `layout.js` * 1000 to get time in ms
+  const TRANSITION_DELAY = 0.3 * 1000 * 2
+
+  // if it's a "normal" route
   if (location.action === 'PUSH') {
-    window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
-  } else {
-    const savedPosition = getSavedScrollPosition(location)
-    window.setTimeout(
-      () => window.scrollTo(...(savedPosition || [0, 0])),
-      transitionDelay
-    )
+    window.setTimeout(() => window.scrollTo(0, 0), TRANSITION_DELAY)
   }
+
+  // if we used the browser's forwards or back button
+  else {
+    // breaking change in shouldUpdateScroll browser API hook:
+    // https://github.com/gatsbyjs/gatsby/issues/23842
+    // looks like they fixed it in Gatsby v. 2.28.1
+    // https://github.com/gatsbyjs/gatsby/pull/27384
+
+    const savedPosition = getSavedScrollPosition(location) || [0, 0]
+
+    window.setTimeout(() => window.scrollTo(...savedPosition), TRANSITION_DELAY)
+  }
+
   return false
 }

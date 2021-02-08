@@ -10,6 +10,7 @@ import {
   GridLeft,
   GridRight,
 } from '~/layouts/styles'
+import Layout from '~/layouts'
 import { ProductTitle, ProductDescription } from './styles'
 
 const ProductPage = ({ data }) => {

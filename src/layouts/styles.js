@@ -29,6 +29,26 @@ export const GlobalStyle = props => (
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
+
+      ul.transition {
+        display: flex;
+        position: fixed;
+        z-index: 1000000;
+        height: 101vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        pointer-events: none;
+        padding: 0;
+      }
+
+      ul.transition li {
+        transform: scaleY(0);
+        background: rebeccapurple;
+        width: 20%;
+        list-style-type: none;
+      }
     `}
   />
 )
