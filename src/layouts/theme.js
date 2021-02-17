@@ -1,6 +1,19 @@
 export default {
   breakpoints: ['320px', '992px', '1024px'],
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
+  fontSizes: {
+    lg: {
+      body: '0.83vw',
+      title: '3.13vw',
+      subtitle: '1.74vw',
+      button: '0.75vw',
+    },
+    sm: {
+      body: '0.89vw',
+      title: '3.13vw',
+      subtitle: '1.74vw',
+      button: '0.75vw',
+    },
+  },
   colors: {
     blue: '#07c',
     lightgray: '#f6f6ff',
@@ -16,10 +29,21 @@ export default {
     heading: 700,
     bold: 700,
     title: 900,
+    button: 700,
   },
   lineHeights: {
-    body: 1.5,
-    heading: 1.25,
+    lg: {
+      body: '1.32vw',
+      title: '3.19vw',
+      subtitle: '1.74vw',
+      button: '0.75vw',
+    },
+    sm: {
+      body: '1.32vw',
+      title: '3.19vw',
+      subtitle: '1.74vw',
+      button: '0.75vw',
+    },
   },
   shadows: {
     small: '0 0 4px rgba(0, 0, 0, .125)',

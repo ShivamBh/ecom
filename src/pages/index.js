@@ -12,7 +12,7 @@ const HomeWrapper = styled.div`
 `
 
 const IndexPage = ({ children, transitionStatus }) => {
-  console.log('transitionStatus', transitionStatus)
+  // console.log('transitionStatus', transitionStatus)
   return (
     <>
       {/* <TransitionState>

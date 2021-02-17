@@ -46,7 +46,7 @@ export const GlobalStyle = props => (
       ul.transition li {
         transform: scaleY(0);
         background: black;
-        width: 20%;
+        width: 100%;
         list-style-type: none;
       }
     `}
@@ -63,34 +63,4 @@ export const Img = styled(Image)`
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-`
-
-export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-`
-
-export const TwoColumnGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2rem 1fr;
-  grid-template-rows: 1auto;
-  grid-template-areas: 'left . right';
-`
-
-export const GridLeft = styled.div`
-  grid-area: left;
-`
-
-export const GridRight = styled.div`
-  grid-area: right;
-`
-
-export const MainContent = styled.main`
-  margin-top: 80px;
-  margin-bottom: 40px;
-
-  @media (max-width: ${breakpoints.l}px) {
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
 `

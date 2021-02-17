@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.div`
   height: 6.9vw;
   padding: 0 4.2vw;
   position: fixed;
-  background: transparent;
+  background: white;
   top: 0;
   left: 0;
   right: 0;

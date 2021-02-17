@@ -64,7 +64,7 @@ const ProductGrid = () => {
             },
           }) => (
             <Product key={id}>
-              <TLink
+              {/* <TLink
                 exit={{
                   length: 0.6,
                   trigger: ({ exit, e, node }) => animateObjects(exit, node),
@@ -82,7 +82,15 @@ const ProductGrid = () => {
                     alt={handle}
                   />
                 )}
-              </TLink>
+              </TLink> */}
+              <Link to={`/product/${handle}/`}>
+                {firstImage && firstImage.localFile && (
+                  <ProductImg
+                    fluid={firstImage.localFile.childImageSharp.fluid}
+                    alt={handle}
+                  />
+                )}
+              </Link>
               {/* <Link
                 entry={entryTransition}
                 exit={exitTransition}

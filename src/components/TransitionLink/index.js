@@ -1,5 +1,6 @@
 import React from 'react'
 import TransitionLink from 'gatsby-plugin-transition-link'
+import { Link } from 'gatsby'
 
 const TLink = props => (
   <TransitionLink

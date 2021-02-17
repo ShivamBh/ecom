@@ -14,8 +14,10 @@ import { TransitionState } from 'gatsby-plugin-transition-link'
 
 const Wrapper = styled.main`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
+  margin-bottom: 0;
+  max-width: 100%;
+  min-height: 8.9vw;
+  padding: 0px 4.2vw;
 `
 
 const duration = 0.8
@@ -79,7 +81,7 @@ const Layout = ({ children, location }) => {
     // await pageAnim.start({ transformOrigin: '50% 0%' })
     await pageAnim.start({ scaleY: 0 })
   }
-  console.log('Transition', TransitionState)
+  // console.log('Transition', TransitionState)
 
   return (
     <ThemeProvider theme={theme}>
@@ -121,13 +123,10 @@ const Layout = ({ children, location }) => {
               >
                 
               </motion.main> */}
-              <ul className="transition">
+              {/* <ul className="transition">
                 <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+                
+              </ul> */}
 
               <Wrapper>{children}</Wrapper>
             </>
