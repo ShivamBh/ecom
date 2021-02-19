@@ -32,7 +32,9 @@ const ProductPage = ({ data, transitionStatus }) => {
             ))} */}
           </GridLeft>
           <GridRight>
-            <ProductTitle uppercase>{product.title}</ProductTitle>
+            <ProductTitle uppercase cx>
+              {product.title}
+            </ProductTitle>
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />

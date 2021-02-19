@@ -14,6 +14,9 @@ export const GridLeft = styled.div`
 export const GridRight = styled.div`
   grid-area: right;
   padding: 8.33vw;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
 `
 
 export const MainContent = styled.main`
@@ -38,12 +41,4 @@ export const ProductDescription = styled.div`
   margin-top: 2.7vw;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 300;
-`
-export const AddToCartBtn = styled.button`
-  display: inline-block;
-  font-size: ${props => props.theme.fontSizes.button};
-  padding: ${props => props.theme.paddings.lg};
-  color: ${props => props.theme.buttons.primary.color}
-  background-color: ${props => props.theme.buttons.primary.bg}
-  font-weight: ${props => props.theme.fontWeights.button};
 `

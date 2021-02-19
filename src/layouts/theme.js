@@ -5,18 +5,21 @@ export default {
       body: '0.83vw',
       title: '3.13vw',
       subtitle: '1.74vw',
-      button: '0.75vw',
+      button: '0.83vw',
+      meta: '0.73vw',
     },
     sm: {
       body: '0.89vw',
       title: '3.13vw',
       subtitle: '1.74vw',
-      button: '0.75vw',
+      button: '0.95vw',
     },
   },
   colors: {
     blue: '#07c',
     lightgray: '#f6f6ff',
+    btnText: 'white',
+    btnBg: 'black',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -51,10 +54,26 @@ export default {
   },
   variants: {},
   text: {},
-  buttons: {
-    primary: {
-      color: 'white',
-      bg: 'black',
+  margins: {
+    actions: {
+      lg: '1.11vw',
+    },
+    content: {},
+    sections: {},
+  },
+  paddings: {
+    button: {
+      lg: '0.69vw',
+    },
+  },
+  heights: {
+    button: {
+      lg: '3.6vw',
+    },
+  },
+  widths: {
+    button: {
+      lg: '15.06vw',
     },
   },
 }

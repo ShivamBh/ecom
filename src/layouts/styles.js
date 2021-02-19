@@ -49,6 +49,16 @@ export const GlobalStyle = props => (
         width: 100%;
         list-style-type: none;
       }
+
+      button {
+        outline: none;
+        background: black;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
     `}
   />
 )

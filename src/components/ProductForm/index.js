@@ -4,6 +4,8 @@ import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
+import QuantityInput from './qtyInput'
+import { AddToCartBtn, QtyInputField } from './styles'
 
 const ProductForm = ({ product }) => {
   const {
@@ -42,8 +44,8 @@ const ProductForm = ({ product }) => {
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-  const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
+  const handleQuantityChange = value => {
+    setQuantity(value)
   }
 
   const handleOptionChange = (optionIndex, { target }) => {
@@ -116,27 +118,28 @@ const ProductForm = ({ product }) => {
               </option>
             ))}
           </select>
-          <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
+
+      <QuantityInput
+        currentVariant={variant}
+        onQtyChange={handleQuantityChange}
       />
-      <br />
-      <button
+
+      <AddToCartBtn
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
         Add to Cart
-      </button>
+      </AddToCartBtn>
+      {/* <button
+        type="submit"
+        disabled={!available || adding}
+        onClick={handleAddToCart}
+      >
+        Add to Cart
+      </button> */}
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )
