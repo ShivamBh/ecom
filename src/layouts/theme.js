@@ -65,6 +65,12 @@ export default {
     button: {
       lg: '0.69vw',
     },
+    action: {
+      lg: '0.56vw',
+    },
+    hoverAction: {
+      lg: '0.37vw',
+    },
   },
   heights: {
     button: {
@@ -75,5 +81,8 @@ export default {
     button: {
       lg: '15.06vw',
     },
+  },
+  borders: {
+    primary: '2px solid black',
   },
 }
