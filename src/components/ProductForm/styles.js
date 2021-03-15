@@ -12,6 +12,9 @@ export const AddToCartBtn = styled.button`
   font-weight: ${props => props.theme.fontWeights.button};
   margin-bottom: 1.39vw;
   
+  &.disabled {
+    background-color: ${props => props.theme.colors.lightgray}
+  }
 `
 export const QtyInput = styled.div`
   display: flex;

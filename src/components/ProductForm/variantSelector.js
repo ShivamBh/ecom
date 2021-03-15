@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   VariantOption,
   VariantName,
@@ -24,8 +24,8 @@ const VariantSelector = ({ options, onOptionChange, checkDisabled }) => {
               <VariantValueItem
                 key={`${name}-${value}`}
                 onClick={() => handleChange(index, value)}
-                disabled={checkDisabled(name, value)}
-                className={``}
+                // disabled={checkDisabled(name, value)}
+                // className={checkDisabled(name, value) ? 'disabled' : ''}
               >
                 {value}
               </VariantValueItem>
