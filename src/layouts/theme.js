@@ -17,7 +17,7 @@ export default {
   },
   colors: {
     blue: '#07c',
-    lightgray: '#f6f6ff',
+    lightgray: '#9a9a9c',
     btnText: 'white',
     btnBg: 'black',
   },
