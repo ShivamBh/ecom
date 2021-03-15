@@ -19,10 +19,10 @@ export const QtyInput = styled.div`
   justify-content: center;
   border: 2px solid black;
 
-  padding: ${props => props.theme.paddings.button.lg};
   height: ${props => props.theme.heights.button.lg};
   width: ${props => props.theme.widths.button.lg};
   margin-bottom: ${props => props.theme.margins.actions.lg};
+  margin-top: ${props => props.theme.margins.actions.lg};
 
   > div {
     height: 100%;
@@ -66,9 +66,67 @@ export const QtyValue = styled.p`
 `
 export const QtyInputField = styled.input`
   border: 2px solid black;
-  font-size: ${props => props.theme.fontSizes.lg.button}
+  font-size: ${props => props.theme.fontSizes.lg.body}
   padding: ${props => props.theme.paddings.button.lg};
   height: ${props => props.theme.heights.button.lg};
   width: ${props => props.theme.widths.button.lg};
   
+`
+export const VariantOption = styled.div`
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: ${props => props.theme.heights.button.lg};
+
+  margin-top: ${props => props.theme.margins.actions.lg};
+`
+export const VariantName = styled.p`
+  display: block;
+  font-size: ${props => props.theme.fontSizes.lg.body};
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+`
+
+export const VariantValues = styled.div`
+  border-left: 2px solid black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 50%;
+  padding: 0 ${props => props.theme.paddings.button.lg};
+`
+
+export const VariantValueItem = styled.button`
+  display: block;
+  font-size: ${props => props.theme.fontSizes.lg.meta};
+  margin: 0 4px;
+  padding: ${props => props.theme.paddings.hoverAction.lg};
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: white;
+  color: black;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background: ${props => props.theme.colors.blue};
+    color: white;
+  }
+
+  &.active {
+    background: ${props => props.theme.colors.blue};
+    color: white;
+  }
+
+  &.disabled {
+    background: white;
+    color: ${props => props.theme.colors.lightgray};
+  }
 `

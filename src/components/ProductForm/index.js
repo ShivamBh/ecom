@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import StoreContext from '~/context/StoreContext'
 import QuantityInput from './qtyInput'
 import { AddToCartBtn, QtyInputField } from './styles'
+import VariantSelector from './variantSelector'
 
 const ProductForm = ({ product }) => {
   const {
@@ -48,8 +49,8 @@ const ProductForm = ({ product }) => {
     setQuantity(value)
   }
 
-  const handleOptionChange = (optionIndex, { target }) => {
-    const { value } = target
+  const handleOptionChange = (optionIndex, value) => {
+    // const { value } = target
     const currentOptions = [...variant.selectedOptions]
 
     currentOptions[optionIndex] = {
@@ -100,7 +101,7 @@ const ProductForm = ({ product }) => {
   return (
     <>
       <h3>{price}</h3>
-      {options.map(({ id, name, values }, index) => (
+      {/* {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
           <select
@@ -119,7 +120,13 @@ const ProductForm = ({ product }) => {
             ))}
           </select>
         </React.Fragment>
-      ))}
+      ))} */}
+
+      <VariantSelector
+        options={options}
+        onOptionChange={handleOptionChange}
+        checkDisabled={checkDisabled}
+      />
 
       <QuantityInput
         currentVariant={variant}
