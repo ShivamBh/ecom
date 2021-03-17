@@ -20,6 +20,7 @@ export default {
     lightgray: '#9a9a9c',
     btnText: 'white',
     btnBg: 'black',
+    error: '#ef5858',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -58,7 +59,9 @@ export default {
     actions: {
       lg: '1.11vw',
     },
-    content: {},
+    content: {
+      lg: '1.11vw',
+    },
     sections: {},
   },
   paddings: {
