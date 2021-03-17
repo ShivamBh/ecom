@@ -7,6 +7,7 @@ import StoreContext from '~/context/StoreContext'
 import QuantityInput from './qtyInput'
 import { AddToCartBtn, QtyInputField } from './styles'
 import VariantSelector from './variantSelector'
+import NotifyInStock from './NotifyInStock'
 
 const ProductForm = ({ product }) => {
   const {
@@ -148,7 +149,7 @@ const ProductForm = ({ product }) => {
       >
         Add to Cart
       </button> */}
-      {!available && <p>This Product is out of Stock!</p>}
+      {!available && <NotifyInStock />}
     </>
   )
 }

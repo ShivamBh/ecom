@@ -10,7 +10,6 @@ export const AddToCartBtn = styled.button`
   color: ${props => props.theme.colors.btnText}
   background-color: ${props => props.theme.colors.btnBg}
   font-weight: ${props => props.theme.fontWeights.button};
-  margin-bottom: 1.39vw;
   
   &.disabled {
     background-color: ${props => props.theme.colors.lightgray}
@@ -132,4 +131,32 @@ export const VariantValueItem = styled.button`
     background: white;
     color: ${props => props.theme.colors.lightgray};
   }
+`
+export const OutOfStock = styled.div`
+  width: 100%;
+  font-size: ${props => props.theme.fontSizes.lg.meta};
+  margin-top: ${props => props.theme.margins.actions.lg};
+
+  > .error {
+    color: ${props => props.theme.colors.error};
+  }
+`
+export const OutOfStockMessage = styled.p`
+  width: 100%;
+`
+
+export const OutOfStockInput = styled.input`
+  display: inline-block;
+  font-size: ${props => props.theme.fontSizes.lg.body};
+  padding: ${props => props.theme.paddings.button.lg};
+  outline: none;
+  border: 1px solid black;
+  margin-right: ${props => props.theme.margins.content.lg};
+`
+
+export const OutofStockBtn = styled.button`
+  display: inline-block;
+  font-size: ${props => props.theme.fontSizes.lg.meta};
+  padding: ${props => props.theme.paddings.button.lg};
+  text-transform: none;
 `
