@@ -1,0 +1,137 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Slug",
+        "placeholder": "Product Slug(Ex: nokia-phone-3310)"
+      }
+    },
+    "shopify_product": {
+      "type": "IntegrationFields",
+      "config": {
+        "catalog": "rhecom--shopify_catalog",
+        "label": "Shopify Product",
+        "placeholder": "Shopify Prodcut"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title",
+        "placeholder": "Product Title"
+      }
+    },
+    "product_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Product Subtitle",
+        "placeholder": "Product Subtitle"
+      }
+    },
+    "related_products": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["products"],
+        "label": "Related Products",
+        "placeholder": "Add products similar for Related Products carousel"
+      }
+    },
+    "similar_products": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "product": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["products"],
+              "label": "Product",
+              "placeholder": "Select a product"
+            }
+          }
+        },
+        "label": "Similar Products"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "product_details": [],
+          "product_content": []
+        },
+        "choices": {
+          "product_details": {
+            "type": "Slice",
+            "fieldset": "Product Details",
+            "description": "Different types of product details such as description, summar, instructions etc.",
+            "icon": "add_shopping_cart",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "description_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4, heading6",
+                  "label": "Description Title",
+                  "placeholder": "Title of this Description(Ex: Summary, Brief, Instructions)"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
+                  "label": "Content",
+                  "placeholder": "Content for this Description/Summary"
+                }
+              }
+            }
+          },
+          "product_content": {
+            "type": "Slice",
+            "fieldset": "Product Content Section",
+            "description": "Additional Content for Product Page",
+            "icon": "add_box",
+            "display": "grid",
+            "non-repeat": {
+              "content_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Content Heading",
+                  "placeholder": "Heading for section(optional)"
+                }
+              }
+            },
+            "repeat": {
+              "section_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Section Image"
+                }
+              },
+              "section_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink",
+                  "label": "Section Content",
+                  "placeholder": "Add some content for this section(optional)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

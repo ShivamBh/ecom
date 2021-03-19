@@ -1,4 +1,5 @@
 const path = require('path')
+const linkResolver = require('./src/utils/linkResolver')
 
 require('dotenv').config({
   // path: `.env.${process.env.NODE_ENV}`,
@@ -13,6 +14,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `rhecom`,
+        accessToken: `MC5ZRk0zVVJBQUFDTUFwdmQ3.77-9PEfvv70FZe-_vTHvv71277-977-9N--_ve-_vWcRKO-_ve-_ve-_vR0F77-977-977-9J--_vR3vv71x77-9`,
+        linkResolver: () => doc => linkResolver(doc),
+        schemas: {
+          products: require('./src/prismicSchema/products.json'),
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-transition-link`,
       options: {

@@ -14,22 +14,17 @@ import {
 } from './styles'
 import { motion } from 'framer-motion'
 
-const ProductPage = ({ data, transitionStatus }) => {
-  const product = data.shopifyProduct
-  console.log('Product Data', data)
+const ProductPage = ({ data, transitionStatus, pageContext }) => {
+  // const product = data.shopifyProduct
+  const { productData } = pageContext
+  console.log('Product Data', productData)
   return (
     <>
-      <SEO title={product.title} description={product.description} />
+      {/* <SEO title={product.title} description={product.description} />
       <div>
         <TwoColumnGrid>
           <GridLeft>
-            {/* {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
-              />
-            ))} */}
+            
           </GridLeft>
           <GridRight>
             <ProductTitle uppercase cx>
@@ -41,7 +36,8 @@ const ProductPage = ({ data, transitionStatus }) => {
             <ProductForm product={product} />
           </GridRight>
         </TwoColumnGrid>
-      </div>
+      </div> */}
+      <h1>Product Page</h1>
     </>
   )
 }
