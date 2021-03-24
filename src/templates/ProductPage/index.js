@@ -3,28 +3,29 @@ import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
-import Layout from '~/layouts'
+import DetailPageCarousel from '../../components/ProductCarousel/DetailPageCarousel'
 import {
   ProductTitle,
   ProductDescription,
-  Img,
   TwoColumnGrid,
   GridLeft,
   GridRight,
 } from './styles'
-import { motion } from 'framer-motion'
+// import Layout from '~/layouts'
+// import { motion } from 'framer-motion'
 
 const ProductPage = ({ data, transitionStatus, pageContext }) => {
-  // const product = data.shopifyProduct
-  const { productData } = pageContext
-  console.log('Product Data', productData)
+  const product = data.shopifyProduct
+  const { prismicData } = pageContext
+  console.log('Prismic Data', prismicData)
+  console.log('Shopify Data', product)
   return (
     <>
-      {/* <SEO title={product.title} description={product.description} />
+      <SEO title={product.title} description={product.description} />
       <div>
         <TwoColumnGrid>
           <GridLeft>
-            
+            <DetailPageCarousel images={product.images}></DetailPageCarousel>
           </GridLeft>
           <GridRight>
             <ProductTitle uppercase cx>
@@ -36,7 +37,7 @@ const ProductPage = ({ data, transitionStatus, pageContext }) => {
             <ProductForm product={product} />
           </GridRight>
         </TwoColumnGrid>
-      </div> */}
+      </div>
       <h1>Product Page</h1>
     </>
   )
