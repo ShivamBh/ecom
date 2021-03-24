@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions }) => {
         handle: node.uid,
         id: node.id,
         type: node.type,
-        productData: node.data,
+        prismicData: node.data,
       },
     })
   })
