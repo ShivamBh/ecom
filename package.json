@@ -36,6 +36,7 @@
     "js-yaml": "^3.14.1",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.27.6",
     "querystringify": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -43,7 +44,8 @@
     "react-slick": "^0.28.1",
     "rebass": "^4.0.7",
     "set-value": "^3.0.2",
-    "shopify-buy": "^2.11.0"
+    "shopify-buy": "^2.11.0",
+    "slick-carousel": "^1.8.1"
   },
   "keywords": [
     "gatsby",

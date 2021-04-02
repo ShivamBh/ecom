@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Slider } from 'pure-react-carousel'
 
 export const WindowContainer = styled.div`
   margin-top: 0.83vw;
@@ -21,4 +22,7 @@ export const WindowItem = styled.div`
       object-fit: cover;
     }
   }
+`
+export const CarouselContainer = styled.div`
+  padding-top: 8.33vw;
 `
