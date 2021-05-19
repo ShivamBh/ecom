@@ -25,4 +25,6 @@ export const WindowItem = styled.div`
 `
 export const CarouselContainer = styled.div`
   padding-top: 8.33vw;
+  justify-self: stretch;
+  width: 39.3vw;
 `

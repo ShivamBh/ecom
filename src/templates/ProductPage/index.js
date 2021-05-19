@@ -28,9 +28,7 @@ const ProductPage = ({ data, transitionStatus, pageContext }) => {
             <DetailPageCarousel images={product.images}></DetailPageCarousel>
           </GridLeft>
           <GridRight>
-            <ProductTitle uppercase cx>
-              {product.title}
-            </ProductTitle>
+            <ProductTitle uppercase>{product.title}</ProductTitle>
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />

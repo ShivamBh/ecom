@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2rem 1fr;
-  grid-template-rows: 1auto;
+  grid-template-rows: 1fr auto;
   grid-template-areas: 'left . right';
 `
 

@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
-import SwiperCore, { Thumbs } from 'swiper'
+import SwiperCore, { Thumbs, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import 'swiper/components/thumbs/thumbs.scss'
+import 'swiper/components/navigation/navigation.scss'
 import { WindowContainer, WindowItem, CarouselContainer } from './styles'
-import 'pure-react-carousel/dist/react-carousel.es.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 
-SwiperCore.use([Thumbs])
+import './styles.css'
+
+SwiperCore.use([Navigation, Thumbs])
 
 const CarouselWindows = ({ images }) => {
   return (
@@ -53,33 +53,42 @@ const CarouselSlider = ({ images }) => {
 
     cssEase: 'easeIn',
   }
+
+  const [thumbSwiper, setThumbSwiper] = useState(null)
+
   return (
     <>
-      {/* <Slider
-        {...settings}
-        className="overflow-hidden"
+      {/* Main Swiper */}
+      <Swiper
         style={{
-          maxWidth: '480px',
-          marginBottom: '1.33vw',
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
         }}
+        loop={true}
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbSwiper }}
+        className="mainSwiper"
+        autoHeight={true}
+        slidesPerView={1}
       >
         {images.map((image, index) => (
-          <Img fluid={image.localFile.childImageSharp.fluid} key={image.id} />
+          <SwiperSlide key={image.id}>
+            <Img fluid={image.localFile.childImageSharp.fluid} key={image.id} />
+          </SwiperSlide>
         ))}
-      </Slider> */}
+      </Swiper>
+
+      {/* Swiper Thumbnails */}
       <Swiper
-        slidesPerView={1}
-        autoHeight={true}
-        loop={true}
-        width={400}
-        spaceBetween={40}
-        centeredSlides={true}
-        style={{
-          width: `480px`,
-        }}
-        thumbs={{
-          swiper: 'swiper-thumbs',
-        }}
+        onSwiper={setThumbSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesVisibility={true}
+        watchSlidesProgress={true}
+        className="thumbnailSwiper"
+        style={{}}
       >
         {images.map((image, index) => (
           <SwiperSlide key={image.id}>
@@ -100,7 +109,7 @@ const DetailPageCarousel = props => {
     <>
       <CarouselContainer>
         <CarouselSlider images={props.images} />
-        <CarouselWindows images={props.images} />
+        {/* <CarouselWindows images={props.images} /> */}
       </CarouselContainer>
     </>
   )
