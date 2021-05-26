@@ -2,6 +2,7 @@ export default {
   breakpoints: ['320px', '992px', '1024px'],
   fontSizes: {
     lg: {
+      banner: '3.33vw',
       body: '0.83vw',
       title: '3.13vw',
       subtitle: '1.74vw',
@@ -73,6 +74,9 @@ export default {
     },
     hoverAction: {
       lg: '0.37vw',
+    },
+    page: {
+      lg: '10.8vw',
     },
   },
   heights: {

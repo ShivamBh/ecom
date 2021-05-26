@@ -6,10 +6,15 @@ import SEO from '~/components/seo'
 import ProductGrid from '~/components/ProductGrid'
 import Layout from '~/layouts'
 import { TransitionState } from 'gatsby-plugin-transition-link'
-
-const HomeWrapper = styled.div`
-  margin-top: 7.5vw;
-`
+import {
+  HomeWrapper,
+  HomeIntro,
+  IntroContent,
+  IntroImage,
+  BannerTitle,
+  CtaBtn,
+  Btn,
+} from '~/components/PageComponents/HomePage/styles'
 
 const IndexPage = ({ children, transitionStatus }) => {
   // console.log('transitionStatus', transitionStatus)
@@ -21,9 +26,15 @@ const IndexPage = ({ children, transitionStatus }) => {
         }}
       </TransitionState> */}
       <HomeWrapper>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <ProductGrid />
-        <Link to="/page-2/">Go to page 2</Link>
+        <HomeIntro className="intro">
+          <IntroContent>
+            <BannerTitle>
+              Garden Fresh, blended Assam tea, delivered at your doorstep
+            </BannerTitle>
+            <CtaBtn to="#">Explore</CtaBtn>
+          </IntroContent>
+          <IntroImage></IntroImage>
+        </HomeIntro>
       </HomeWrapper>
     </>
   )

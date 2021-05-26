@@ -17,7 +17,8 @@ const Wrapper = styled.main`
   margin-bottom: 0;
   max-width: 100%;
   min-height: 8.9vw;
-  padding: 0px 4.2vw;
+  padding: 0px 7.5vw;
+  padding-top: ${props => props.theme.paddings.page.lg};
 `
 
 const duration = 0.8
@@ -87,7 +88,7 @@ const Layout = ({ children, location }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <ContextProvider>
-        <StaticQuery
+        {/* <StaticQuery
           query={graphql`
             query SiteTitleQuery {
               site {
@@ -101,37 +102,14 @@ const Layout = ({ children, location }) => {
             <>
               <Navigation siteTitle={data.site.siteMetadata.title} />
 
-              {/* <motion.main
-                initial={{
-                  opacity: 0,
-                  x: -200,
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  x: 200,
-                }}
-                transition={{
-                  type: 'spring',
-                  mass: 0.35,
-                  stiffness: 75,
-                  duration: 0.3,
-                }}
-              >
-                
-              </motion.main> */}
-              {/* <ul className="transition">
-                <li></li>
-                
-              </ul> */}
 
-              <Wrapper>{children}</Wrapper>
+              <div className="main-layout">{children}</div>
             </>
           )}
-        />
+        /> */}
+        <Navigation />
+
+        <Wrapper className="main-layout">{children}</Wrapper>
       </ContextProvider>
     </ThemeProvider>
   )
