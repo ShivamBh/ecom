@@ -63,15 +63,12 @@ const Navbar = props => {
         >
           Blog
         </TLink> */}
-        <NavLink to="/">
-          About
-        </NavLink>
-        <NavLink to="/">
-          Contact
-        </NavLink>
-        <NavLink to="/">
-          Blog
-        </NavLink>
+        <NavLink to="/products">Products</NavLink>
+        <NavLink to="#">Process</NavLink>
+        <NavLink to="#">Legacy</NavLink>
+        <NavLink to="#">Media</NavLink>
+        <NavLink to="#">Blog</NavLink>
+        <NavLink to="#">Contact</NavLink>
       </HeaderNavbar>
     </>
   )

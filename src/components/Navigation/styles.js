@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 import TransitionLink from 'gatsby-plugin-transition-link'
 
 export const HeaderWrapper = styled.div`
-  height: 6.9vw;
-  padding: 0 4.2vw;
+  height: 4.8vw;
+  padding: 0 7.5vw;
   position: fixed;
   background: white;
   top: 0;
@@ -45,8 +45,9 @@ export const HeaderBranding = styled(Link)`
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2vw;
-  text-transform: uppercase;
+  text-decoration: none;
   font-spacing: 1rem;
+  color: black;
 `
 
 export const HeaderNavbar = styled.div`
@@ -54,13 +55,12 @@ export const HeaderNavbar = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 1.1vw;
-  text-transform: uppercase;
 `
 export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 0 0.7vw;
   color: black;
-  font-weight: 700;
+  font-weight: 400;
 `
 
 export const HeaderActions = styled.div``

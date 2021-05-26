@@ -17,8 +17,8 @@ const NavCart = props => {
   return (
     <>
       <HeaderCart>
-        <CartLink to="/">Cart</CartLink>
-        <CartLink to="/">
+        <CartLink to="/cart">Cart</CartLink>
+        <CartLink to="/cart">
           <CartCount>{hasItems ? quantity : 0}</CartCount>
         </CartLink>
       </HeaderCart>
