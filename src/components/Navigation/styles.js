@@ -58,7 +58,7 @@ export const HeaderNavbar = styled.div`
 `
 export const NavLink = styled(Link)`
   text-decoration: none;
-  padding: 0 0.7vw;
+  padding: 0 1.13vw;
   color: black;
   font-weight: 400;
 `

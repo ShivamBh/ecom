@@ -4,7 +4,7 @@ export default {
     lg: {
       banner: '3.33vw',
       body: '0.83vw',
-      title: '3.13vw',
+      title: '2.77vw',
       subtitle: '1.74vw',
       button: '0.83vw',
       meta: '0.73vw',
@@ -14,7 +14,7 @@ export default {
       banner: '3.33vw',
 
       body: '0.89vw',
-      title: '3.13vw',
+      title: '2.77vw',
       subtitle: '1.74vw',
       button: '0.95vw',
       meta: '0.73vw',

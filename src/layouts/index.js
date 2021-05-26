@@ -17,7 +17,7 @@ const Wrapper = styled.main`
   margin-bottom: 0;
   max-width: 100%;
   min-height: 8.9vw;
-  padding: 0px 7.5vw;
+  padding: 0px 0vw;
   padding-top: 3.3vw;
 `
 

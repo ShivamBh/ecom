@@ -9,6 +9,7 @@ import { TransitionState } from 'gatsby-plugin-transition-link'
 import {
   HomeWrapper,
   HomeIntro,
+  SectionWrapper,
   IntroContent,
   IntroImage,
   BannerTitle,
@@ -17,12 +18,13 @@ import {
   HomeNewsletter,
   NewsletterText,
   NewsletterInput,
+  PitchContent,
+  PitchText,
+  PitchMedia,
 } from '~/components/PageComponents/HomePage/styles'
 
-const IndexPage = ({ children, transitionStatus }) => {
-  // console.log('transitionStatus', transitionStatus)
+const NewsletterBlock = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('')
-
   const handleNewsletterSubmit = () => {
     if (newsletterEmail) {
       console.log('submit', newsletterEmail)
@@ -36,29 +38,56 @@ const IndexPage = ({ children, transitionStatus }) => {
 
   return (
     <>
-      {/* <TransitionState>
-        {({ transitionStatus, entry, exit }) => {
-          console.log('Status', transitionStatus)
-        }}
-      </TransitionState> */}
-      <HomeWrapper>
-        <HomeIntro className="intro">
-          <IntroContent>
-            <BannerTitle>
-              Garden Fresh, blended Assam tea, delivered at your doorstep
-            </BannerTitle>
-            <CtaBtn to="#">Explore</CtaBtn>
-          </IntroContent>
-          <IntroImage></IntroImage>
-        </HomeIntro>
+      <HomeNewsletter>
+        <NewsletterText>Subscribe to our newsletter</NewsletterText>
+        <NewsletterInput placeholder="Email" onChange={handleInputChange} />
+        <Btn type="submit" onClick={handleNewsletterSubmit}>
+          Submit
+        </Btn>
+      </HomeNewsletter>
+    </>
+  )
+}
 
-        <HomeNewsletter>
-          <NewsletterText>Subscribe to our newsletter</NewsletterText>
-          <NewsletterInput placeholder="Email" onChange={handleInputChange} />
-          <Btn type="submit" onClick={handleNewsletterSubmit}>
-            Submit
-          </Btn>
-        </HomeNewsletter>
+const IndexPage = () => {
+  return (
+    <>
+      <HomeWrapper>
+        {/* Intro Section */}
+        <SectionWrapper>
+          <HomeIntro className="intro">
+            <IntroContent>
+              <BannerTitle>
+                Garden Fresh, blended Assam tea, delivered at your doorstep
+              </BannerTitle>
+              <CtaBtn to="#">Explore</CtaBtn>
+            </IntroContent>
+            <IntroImage></IntroImage>
+          </HomeIntro>
+        </SectionWrapper>
+
+        {/* Newsletter Section */}
+        <SectionWrapper>
+          <NewsletterBlock />
+        </SectionWrapper>
+
+        {/* Pitch Content Block Section */}
+        <SectionWrapper>
+          <PitchContent>
+            <div>
+              <PitchText>
+                Fresh from our gardens, nurtured by the air.
+              </PitchText>
+              <PitchText>
+                Filled with the aroma of the soil of Sonarie.
+              </PitchText>
+              <PitchText>
+                Processed, sealed and delivered straight to your kitchen.
+              </PitchText>
+            </div>
+            <PitchMedia></PitchMedia>
+          </PitchContent>
+        </SectionWrapper>
       </HomeWrapper>
     </>
   )

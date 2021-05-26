@@ -22,9 +22,14 @@ export const Btn = styled.button`
   border-radius: 2.56vw;
 `
 
+export const SectionWrapper = styled.section`
+  padding: 0 7.5vw;
+  border-bottom: 2px solid #d9d872;
+`
+
 export const HomeWrapper = styled.div``
 
-export const HomeIntro = styled.section`
+export const HomeIntro = styled.div`
   display: flex;
   min-height: 25vw;
   justify-content: space-between;
@@ -73,3 +78,32 @@ export const NewsletterInput = styled.input`
   padding: 1.07vw 0.73vw;
   width: 22.5vw;
 `
+export const PitchContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: ${props => props.theme.paddings.section.lg} 0;
+  max-width: 81.73vw;
+`
+
+export const PitchText = styled.h3`
+  font-size: ${props => props.theme.fontSizes.lg.title};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  padding: 0 7.5vw;
+  text-align: center;
+  line-height: 0.78;
+`
+
+export const PitchMedia = styled.div`
+  height: 500px;
+  width: 500px;
+  backgorund-color: black;
+`
+
+export const PitchImage = styled.div``
+
+export const PitchSvgLeft = styled.div``
+
+export const PitchSvgRight = styled.div``
+
+export const PitchDivider = styled.div``
