@@ -8,12 +8,17 @@ export default {
       subtitle: '1.74vw',
       button: '0.83vw',
       meta: '0.73vw',
+      info: '1.66vw',
     },
     sm: {
+      banner: '3.33vw',
+
       body: '0.89vw',
       title: '3.13vw',
       subtitle: '1.74vw',
       button: '0.95vw',
+      meta: '0.73vw',
+      info: '1.66vw',
     },
   },
   colors: {
@@ -31,6 +36,7 @@ export default {
   },
   fontWeights: {
     body: 300,
+    normal: 500,
     heading: 700,
     bold: 700,
     title: 900,
@@ -77,6 +83,9 @@ export default {
     },
     page: {
       lg: '10.8vw',
+    },
+    section: {
+      lg: '7.22vw',
     },
   },
   heights: {

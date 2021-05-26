@@ -18,7 +18,7 @@ const Wrapper = styled.main`
   max-width: 100%;
   min-height: 8.9vw;
   padding: 0px 7.5vw;
-  padding-top: ${props => props.theme.paddings.page.lg};
+  padding-top: 3.3vw;
 `
 
 const duration = 0.8
