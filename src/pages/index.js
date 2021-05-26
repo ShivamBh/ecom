@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
@@ -14,10 +14,26 @@ import {
   BannerTitle,
   CtaBtn,
   Btn,
+  HomeNewsletter,
+  NewsletterText,
+  NewsletterInput,
 } from '~/components/PageComponents/HomePage/styles'
 
 const IndexPage = ({ children, transitionStatus }) => {
   // console.log('transitionStatus', transitionStatus)
+  const [newsletterEmail, setNewsletterEmail] = useState('')
+
+  const handleNewsletterSubmit = () => {
+    if (newsletterEmail) {
+      console.log('submit', newsletterEmail)
+    }
+  }
+
+  const handleInputChange = e => {
+    console.log('input', e.target.value)
+    setNewsletterEmail(e.target.value)
+  }
+
   return (
     <>
       {/* <TransitionState>
@@ -35,6 +51,14 @@ const IndexPage = ({ children, transitionStatus }) => {
           </IntroContent>
           <IntroImage></IntroImage>
         </HomeIntro>
+
+        <HomeNewsletter>
+          <NewsletterText>Subscribe to our newsletter</NewsletterText>
+          <NewsletterInput placeholder="Email" onChange={handleInputChange} />
+          <Btn type="submit" onClick={handleNewsletterSubmit}>
+            Submit
+          </Btn>
+        </HomeNewsletter>
       </HomeWrapper>
     </>
   )
